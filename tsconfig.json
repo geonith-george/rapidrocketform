@@ -8,8 +8,8 @@
     "strict": true,
     "noImplicitOverride": true,
     "paths": {
-      "formatron": [
-        "dist/formatron"
+      "rapidrocketform": [
+        "dist/rapidrocketform"
       ]
     },
     "noPropertyAccessFromIndexSignature": true,

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormatronComponent } from './formatron.component';
+import { RocketFormComponent } from './rapidrocketform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { CommonModule } from '@angular/common';
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    FormatronComponent
+    RocketFormComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
     MaterialModule
   ],
   exports: [
-    FormatronComponent
+    RocketFormComponent
   ]
 })
-export class FormatronModule { }
+export class RapidRocketFormModule { }

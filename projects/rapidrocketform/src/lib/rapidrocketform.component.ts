@@ -3,12 +3,12 @@ import { LabelConstants } from './constants/label.constants';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'formatron',
-  templateUrl: './formatron.component.html',
+  selector: 'rapidrocketform',
+  templateUrl: './rapidrocketform.component.html',
   styles: [
   ]
 })
-export class FormatronComponent {
+export class RocketFormComponent {
 
   @Input() fields!: DataModel[];
   @Input() debugMode: boolean = false;

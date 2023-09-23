@@ -1,6 +1,15 @@
 {
-  "name": "library",
+  "name": "formatron",
   "version": "0.0.0",
+  "description": "Build dynamic forms",
+  "author": {
+    "name": "Geonith George",
+    "email": "geonith98@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geonith-george/formatron"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

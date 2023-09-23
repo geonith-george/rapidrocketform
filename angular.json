@@ -96,23 +96,23 @@
         }
       }
     },
-    "formatron": {
+    "rapidrocketform": {
       "projectType": "library",
-      "root": "projects/formatron",
-      "sourceRoot": "projects/formatron/src",
+      "root": "projects/rapidrocketform",
+      "sourceRoot": "projects/rapidrocketform/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/formatron/ng-package.json"
+            "project": "projects/rapidrocketform/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/formatron/tsconfig.lib.prod.json"
+              "tsConfig": "projects/rapidrocketform/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/formatron/tsconfig.lib.json"
+              "tsConfig": "projects/rapidrocketform/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -120,7 +120,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/formatron/tsconfig.spec.json",
+            "tsConfig": "projects/rapidrocketform/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"

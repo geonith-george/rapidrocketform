@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormatronModule } from 'formatron';
+import { RapidRocketFormModule } from 'rapidrocketform';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { FormatronModule } from 'formatron';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormatronModule
+    RapidRocketFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]
