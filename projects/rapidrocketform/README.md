@@ -2,7 +2,7 @@
 
 ## Description
 
-**Rapid Rocket** Form is a versatile and user-friendly Angular-based form component that simplifies the process of creating dynamic and interactive forms. Whether you're building a registration form, a survey, or any other type of data input interface, this component streamlines the form creation process, making it easy to integrate complex forms into your Angular applications.
+**Rapid Rocket Form** is a versatile and user-friendly Angular-based form component that simplifies the process of creating dynamic and interactive forms. Whether you're building a registration form, a survey, or any other type of data input interface, this component streamlines the form creation process, making it easy to integrate complex forms into your Angular applications.
 
 # Getting started
 
