@@ -7,8 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  values = { "fullName": "qwe", "email": "hello@gamil.com", "dateOfBirth": "2023-09-12T18:30:00.000Z", "termsAndConditions": "agree", "country": "us", "address": { "streetAddress": "qwer", "city": "asdf", "postalCode": "asdf" } }
-
+  values  =  {
+    "fullName":  "John Doe",
+    "email":  "johndoe@example.com",
+    "dateOfBirth":  "1990-05-15T12:00:00.000Z",
+    "termsAndConditions":  "accept",
+    "country":  "USA",
+    "address":  {
+    "streetAddress":  "123 Main Street",
+    "city":  "New York",
+    "postalCode":  "10001"
+    }
+  }
+  
   fields = [
     {
       "type": "email",
@@ -16,7 +27,6 @@ export class AppComponent {
       "name": "fullName",
       "validator": ["required",'email']
     }]
-
 
   submit(data: any) {
     console.log(data);
