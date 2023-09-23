@@ -1,0 +1,149 @@
+<div>
+<ng-content select=".title"></ng-content>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ng-container *ngFor="let field of fields">
+        <div fxLayout="column" fxLayoutAlign="center center">
+
+            <div fxFlex="100%" *ngIf="field.type === 'text'">
+                <mat-form-field appearance="outline" class="form-field" style="width: 100%;">
+                    <mat-label>{{ field.label }}</mat-label>
+                    <input matInput [formControlName]="field.name" [placeholder]="field.label" type="text">
+                    <mat-error *ngIf="myError(field.name, 'required')"> {{ labels.REQUIRED }}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="100%" *ngIf="field.type === 'email'">
+                <mat-form-field appearance="outline" class="form-field" style="width: 100%;">
+                    <mat-label>{{ field.label }}</mat-label>
+                    <input matInput [formControlName]="field.name" [placeholder]="field.label" type="email">
+                    <mat-error *ngIf="myError(field.name, 'required')"> {{ labels.REQUIRED }}</mat-error>
+                    <mat-error *ngIf="myError(field.name, 'email')"> This Field requires an email</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="100%" *ngIf="field.type === 'password'">
+                <mat-form-field appearance="outline" class="form-field" style="width: 100%;">
+                    <mat-label>{{ field.label }}</mat-label>
+                    <input matInput [formControlName]="field.name" [placeholder]="field.label" type="password">
+                    <mat-error>Password must be a combination of lower-case, upper-case, numbers and at least 9
+                        characters long</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="100%" *ngIf="field.type === 'radio'">
+                <mat-radio-group appearance="outline" class="form-field" style="width: 100%;"
+                    [formControlName]="field.name">
+                    <mat-label>{{ field.label }}: </mat-label>
+                    <mat-radio-button class="example-radio-button" *ngFor="let item of field.options_r"
+                        [value]="item.value">
+                        {{item.label}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <div fxFlex="100%" *ngIf="field.type === 'date'">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>{{ field.label }}</mat-label>
+                    <input matInput [matDatepicker]="picker" [formControlName]="field.name" [placeholder]="field.label">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="myError(field.name, 'required')"> {{ labels.REQUIRED }}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="100%" *ngIf="field.type === 'select'">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>{{ field.label }}</mat-label>
+                    <mat-select [formControlName]="field.name">
+                        <mat-option *ngFor="let item of field.options_s"
+                            [value]="item.value">{{item.label}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="100%" *ngIf="field.type === 'group'">
+                <!-- Render a subgroup of fields recursively -->
+                <mat-label>{{ field.label }}</mat-label> <br> <br>
+                <div  style="margin-left: 2%;" [formGroupName]="field.name">
+                    <ng-container *ngFor="let subfield of field.fields">
+                        <div fxLayout="column" fxLayoutAlign="center center">
+
+                            <div fxFlex="100%" *ngIf="subfield.type === 'text'">
+                                <mat-form-field appearance="outline" class="form-field" style="width: 100%;">
+                                    <mat-label>{{ subfield.label }}</mat-label>
+                                    <input matInput [formControlName]="subfield.name" [placeholder]="subfield.label"
+                                        type="text">
+                                </mat-form-field>
+                            </div>
+
+
+
+                            <div fxFlex="100%" *ngIf="subfield.type === 'email'">
+                                <mat-form-field appearance="outline" class="form-field" style="width: 100%;">
+                                    <mat-label>{{ subfield.label }}</mat-label>
+                                    <input matInput [formControlName]="subfield.name" [placeholder]="subfield.label"
+                                        type="email">
+                                </mat-form-field>
+                            </div>
+
+                            <div fxFlex="100%" *ngIf="subfield.type === 'password'">
+                                <mat-form-field appearance="outline" class="form-field" style="width: 100%;">
+                                    <mat-label>{{ subfield.label }}</mat-label>
+                                    <input matInput [formControlName]="subfield.name" [placeholder]="subfield.label"
+                                        type="password">
+                                    <!-- <mat-error>Password must be a combination of lower-case, upper-case, numbers and at least 9 -->
+                                    <!-- characters long</mat-error> -->
+                                </mat-form-field>
+                            </div>
+
+                            <div fxFlex="100%" *ngIf="subfield.type === 'radio'">
+                                <mat-radio-group appearance="outline" class="form-field" style="width: 100%;"
+                                    [formControlName]="subfield.name">
+                                    <mat-label>{{ subfield.label }}: </mat-label>
+                                    <mat-radio-button class="example-radio-button"
+                                        *ngFor="let item of subfield.options_r" [value]="item.value">
+                                        {{item.label}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+
+                            <div fxFlex="100%" *ngIf="subfield.type === 'date'">
+                                <mat-form-field appearance="outline" style="width: 100%;">
+                                    <mat-label>{{ subfield.label }}</mat-label>
+                                    <input matInput [matDatepicker]="picker" [formControlName]="subfield.name"
+                                        [placeholder]="subfield.label">
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                    <!-- <mat-error *ngIf="myError(subfield.name, 'required')"> {{ labels.REQUIRED }}</mat-error> -->
+                                </mat-form-field>
+                            </div>
+
+                            <div fxFlex="100%" *ngIf="subfield.type === 'select'">
+                                <mat-form-field appearance="outline" style="width: 100%;">
+                                    <mat-label>{{ subfield.label }}</mat-label>
+                                    <mat-select [formControlName]="subfield.name">
+                                        <mat-option *ngFor="let item of subfield.options_s"
+                                            [value]="item.value">{{item.label}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+
+        </div>
+
+    </ng-container>
+    <div fxFlex="100%">
+        <button mat-button type="submit" [disabled]="!this.form.valid"><ng-content select=".submitButton"></ng-content></button>
+    </div>
+
+</form>
+<div *ngIf="debugMode">
+    {{ form.value | json}}
+</div>
+
+
+</div>
