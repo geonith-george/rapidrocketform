@@ -10,7 +10,8 @@
 
  ### Installation  
  To use `RapidRocketForm` in your Angular project,
- you can install it via npm -> `npm i rapidrocketform`
+ you can install it via npm 
+ `npm i rapidrocketform`
 
 ### Usage
 
