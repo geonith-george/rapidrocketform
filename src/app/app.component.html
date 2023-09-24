@@ -1,7 +1,52 @@
-<div style="margin: 10px">
-    <rapidrocketform [debugMode]="false" [demoFields]="false" [fields]="fields" [viewMode]="false" (submitForm)="submit($event)">
-        <!-- content projection -->
-        <h2 class="title">User Form</h2>
-        <p class="submitButton"> Save </p>
-    </rapidrocketform>
+<div class="col-lg-8 mx-auto p-3 py-md-5">
+    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <span class="fs-1">Rapid Rocket Form Example</span>
+        </a>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-lg-5 col-12">
+
+                <rapidrocketform [debugMode]="false" [demoFields]="false" [setValues]="values" [fields]="fields" [viewMode]="false"
+                    (submitForm)="submit($event)">
+                    <!-- content projection -->
+                    <h3 class="title">User Form</h3>
+                    <p class="submitButton"> Save </p>
+                </rapidrocketform>
+
+            </div>
+            <div class="col-5">
+
+            </div>
+        </div>
+
+        <hr class="col-3 col-md-2">
+
+
+        <div class="row g-5">
+            <div class="col-md-6">
+                <h2>Website</h2>
+                <p>Check out our website</p>
+                <ul class="icon-list">
+                    <li>
+                        <a href="https://github.com/geonith-george/rapidrocketform" rel="noopener" target="_blank">Rapid
+                            Rocket Form</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h2>NPM Registry</h2>
+                <p>Read more detailed instructions and documentation</p>
+                <ul class="icon-list">
+                    <li><a href="https://www.npmjs.com/package/rapidrocketform">Rapid Rocket Form (npm page)</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer class="pt-5 my-5 text-muted border-top">
+        Rapid Rocket Form &middot; 2023
+    </footer>
 </div>

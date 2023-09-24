@@ -165,6 +165,11 @@ export class RocketFormComponent {
     this.submitForm.emit(this.form.value);
   }
 
+  public rebuildForm(){
+    this.reset();
+    this.initForm();
+  }
+
   get labels() { return LabelConstants }
 
   public myError = (controlName: string, errorName: string) => {
@@ -180,5 +185,6 @@ export interface DataModel {
   validator?: string[];
   options_r?: { label: string, value: string }[];
   options_s?: { label: string, value: string }[];
+  textarea_height?: string;
   fields?: DataModel[];
 }
